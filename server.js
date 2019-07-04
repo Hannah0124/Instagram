@@ -5,9 +5,16 @@ const users = require('./routes/api/users')
 const profile = require('./routes/api/profile')
 const posts = require('./routes/api/posts')
 
+// Bring in my bodyParser 
+const bodyParser = require('body-parser');
 
 // Create an instance of express()
 const app = express();
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+// Tell the express to use bodyParser in the form of Json
+app.use(bodyParser.json());
 
 // Db config 
 const db = require('./config/keys').mongoURI
