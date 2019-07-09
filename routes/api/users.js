@@ -14,16 +14,26 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 
+// Load input validation
+const validateRegisterInput = require('../../validation/register')
+const validateLoginInput = require('../../validation/login')
+
 // @route  POST api/users/register
 // @desc   Register user (description of my API)
 // @access Public (Publicly open to anybody)
 router.post('/register', (req, res) => {
+  const {errors, isValid} = validateRegisterInput(req.body);
+
+  // Check validation
+  if (!isValid) {
+    return res.status(400).json(errors)
+  }
+
   User.findOne({email: req.body.email})
     .then(user => {
       if (user) {
-        return res.status(400).json({
-          email: 'Email already exists'
-        })
+        errors.email = 'Email already exists';
+        return res.status(400).json(errors)
       } else {
         // Make a call to the gravatar API 
         const avatar = gravatar.url(req.body.email, {
@@ -61,6 +71,13 @@ router.post('/register', (req, res) => {
 // @desc   Login user (description of my API)
 // @access Public (Publicly open to anybody)
 router.post('/login', (req,res) => {
+  const {errors, isValid} = validateLoginInput(req.body);
+
+  // Check validation
+  if (!isValid) {
+    return res.status(400).json(errors)
+  }
+
   const email = req.body.email;
   const password = req.body.password;
 
@@ -68,9 +85,8 @@ router.post('/login', (req,res) => {
   User.findOne({email})
     .then(user => {
       if (!user) {
-        return res.status(404).json({
-          email: 'User not found'
-        });
+        errors.email = 'User not found';
+        return res.status(404).json(errors);
       }
       // Check password 
       bcrypt.compare(password, user.password)
@@ -108,7 +124,7 @@ router.post('/login', (req,res) => {
 // @desc    Return current user
 // @access  private
 router.get('/current', passport.authenticate('jwt', {session: false}), (req, res) => {
-  res.json({msg: 'Sucess'});
+  res.json(req.user);
 })
 
 
