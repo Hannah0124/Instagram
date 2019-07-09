@@ -1,9 +1,10 @@
 // Import express & mongoose & others
 const express = require('express');
-const mongoose = require('mongoose')
-const users = require('./routes/api/users')
-const profile = require('./routes/api/profile')
-const posts = require('./routes/api/posts')
+const mongoose = require('mongoose');
+const users = require('./routes/api/users');
+const profile = require('./routes/api/profile');
+const posts = require('./routes/api/posts');
+const passport = require('passport');
 
 // Bring in my bodyParser 
 const bodyParser = require('body-parser');
@@ -13,14 +14,23 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
 
-// Tell the express to use bodyParser in the form of Json
+// Tell the express to use bodyParser in the form of Json obj
 app.use(bodyParser.json());
 
 // Db config 
-const db = require('./config/keys').mongoURI
+const db = require('./config/keys').mongoURI;
 
 // Test MongoDB
-mongoose.connect(db).then(() => console.log('MongoDb connected')).catch(err => console.log(err));
+mongoose.connect(db)
+  .then(() => console.log('MongoDb connected'))
+  .catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config 
+require('./config/passport')(passport);
+
 
 // Create the first route.
 // '/': main page
