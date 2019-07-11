@@ -117,7 +117,7 @@ router.post('/',
     const profileFields = {};
     profileFields.user = req.user.id;
     if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.photo) profileFields.photo = req.body.photo;
+    if (req.body.avatar) profileFields.avatar = req.body.avatar;
     if (req.body.name) profileFields.name = req.body.name;
     if (req.body.website) profileFields.website = req.body.website;
     if (req.body.bio) profileFields.bio = req.body.bio;
