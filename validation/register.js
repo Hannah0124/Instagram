@@ -13,6 +13,10 @@ module.exports = function validateRegisterInput(data) {
   //   errors.fullName = "Full name must be between 2 and 30 characters";
   // }
 
+  if (!validator.isEmail(data.email)) {
+    errors.email = "Email must be formatted correctly (e.g. info@info.com)";
+  }
+
   if (!validator.isLength(data.userName, {min: 2, max: 30})) {
     errors.userName = "User name must be between 2 and 30 characters";
   }

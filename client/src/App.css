@@ -7,7 +7,7 @@ img {
   background: url('./img/instagram.png') no-repeat;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: left; 
   height: 100vh;
   margin-top: -24px;
   margin-bottom: -48px;
@@ -24,7 +24,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-}   */
+}  */
 
 .card-form {
   opacity: 0.9;
@@ -40,6 +40,19 @@ img {
 }
 
 /* new style */
+
+.navbar {
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+}
+
+footer {
+  background: #833ab4; 
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); 
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+}
+
 .black-font {
   color: black;
 }
@@ -53,15 +66,21 @@ img {
   width: 350px;
 }
 
-* {
+.landing {
   background-color: #fafaf8; 
   color: black;
 }
 
-.navbar {
-  background-color: #fafaf8! important; 
+nav {
+  background: #833ab4! important; 
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4)! important; 
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4)! important; 
 }
 
 .navbar-letter {
   color: black! important;
+}
+
+.navbar-lightgray {
+  color: lightgray! important;
 }

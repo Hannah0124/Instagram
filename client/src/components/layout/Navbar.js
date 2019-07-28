@@ -14,17 +14,17 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="mobile-nav">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link navbar-letter" to="/profiles"> Developers
+              <Link className="nav-link navbar-lightgray" to="/profiles"> Developers
               </Link>
             </li>
           </ul>
   
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link navbar-letter" to="/register">Sign Up</Link>
+              <Link className="nav-link navbar-lightgray" to="/register">Sign Up</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link navbar-letter" to="/login">Login</Link>
+              <Link className="nav-link navbar-lightgray" to="/login">Login</Link>
             </li>
           </ul>
         </div>
