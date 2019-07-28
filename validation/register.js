@@ -14,7 +14,7 @@ module.exports = function validateRegisterInput(data) {
   // }
 
   if (!validator.isEmail(data.email)) {
-    errors.email = "Email must be formatted correctly (e.g. info@info.com)";
+    errors.email = "email must be formatted correctly (e.g. info@info.com)";
   }
 
   if (!validator.isLength(data.userName, {min: 2, max: 30})) {
@@ -26,7 +26,7 @@ module.exports = function validateRegisterInput(data) {
   }
 
   if (validator.isEmpty(data.email)) {
-    errors.email = "Email field is required";
+    errors.email = "email field is required";
   }
 
   if (validator.isEmpty(data.userName)) {

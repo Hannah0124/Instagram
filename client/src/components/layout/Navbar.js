@@ -6,7 +6,7 @@ class Navbar extends Component {
     return (
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
       <div className="container">
-        <Link className="navbar-brand navbar-letter" to="/">Instagram</Link>
+        <Link className="navbar-brand instagram-logo" to="/">Instagram</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile-nav">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -14,17 +14,17 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="mobile-nav">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link navbar-lightgray" to="/profiles"> Developers
+              <Link className="nav-link lightgray-font" to="/profiles"> Developers
               </Link>
             </li>
           </ul>
   
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link navbar-lightgray" to="/register">Sign Up</Link>
+              <Link className="nav-link lightgray-font" to="/register">Sign Up</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link navbar-lightgray" to="/login">Login</Link>
+              <Link className="nav-link lightgray-font" to="/login">Login</Link>
             </li>
           </ul>
         </div>

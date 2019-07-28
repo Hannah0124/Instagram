@@ -53,10 +53,6 @@ footer {
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
 }
 
-.black-font {
-  color: black;
-}
-
 .btn {
   background-color: #3897f0;
   color: #ffffff;
@@ -77,10 +73,18 @@ nav {
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4)! important; 
 }
 
-.navbar-letter {
-  color: black! important;
+.black-font {
+  color: black;
 }
 
-.navbar-lightgray {
+.lightgray-font {
   color: lightgray! important;
+}
+
+.gray-font {
+  color: gray! important;
+}
+
+.instagram-logo {
+  font-family: 'Norican', cursive;
 }
