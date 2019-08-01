@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {loginUser} from '../../actions/authActions';
 
 class Login extends Component {
   constructor() {
@@ -14,6 +17,25 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  // If authenticated, route me to "/dashboard"
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
+
+  // Get new data (props) from Redux
+  // This lifecycle below automatically fires when getting data from the store
+  componentWillReceiveProps(nextProps) {
+    // Add history forward 
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push('/dashboard')
+    }
+    if(nextProps.errors) {
+      this.setState({errors: nextProps.errors});
+    }
+  }
+
   onChange(e) {
     this.setState({[e.target.name]:e.target.value})
   }
@@ -25,7 +47,10 @@ class Login extends Component {
     const newUser = {
       email: this.state.email,
       password: this.state.password
-    }
+    };
+
+    // Fire loginUser action 
+    this.props.loginUser(newUser);
   }
 
   render() {
@@ -64,4 +89,15 @@ class Login extends Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  errors: state.errors
+})
+
+export default connect(mapStateToProps, {loginUser})(Login);

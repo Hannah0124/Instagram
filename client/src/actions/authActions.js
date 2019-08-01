@@ -18,6 +18,13 @@ export const registerUser = (userData, history) => dispatch => {
     );
 }
 
+export const setCurrentUser = decoded => {
+  return {
+    type: SET_CURRENT_USER,
+    payload: decoded
+  }
+}
+
 export const loginUser = userData => dispatch => {
   // Ready to fire my API 
   axios 
@@ -35,11 +42,8 @@ export const loginUser = userData => dispatch => {
       // Decode token to get user data
       const decoded = jwt_decode(token);
 
-      // Dispatch to set current user
-      dispatch({
-        type: SET_CURRENT_USER,
-        payload: decoded
-      })
+      // Set current user in the Redux store
+      dispatch(setCurrentUser(decoded))
     })
     .catch(err => 
       dispatch({
@@ -47,4 +51,15 @@ export const loginUser = userData => dispatch => {
         payload: err.response.data
       })
     );
+}
+
+export const logoutUser = () => dispatch => {
+  // (1) Remove token from local storage 
+  localStorage.removeItem('jwtToken');
+
+  // (2) Remove token form auth headers 
+  setAuthToken(false);
+
+  // (3) Clean the user data from Redux store
+  dispatch(setCurrentUser({}));
 }
