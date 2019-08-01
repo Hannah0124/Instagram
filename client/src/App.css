@@ -3,7 +3,7 @@ img {
 }
 
 .landing {
-  /* position: relative; */
+  position: relative;
   /* background: url('./img/instagram.png') no-repeat; */
   /* background-size: contain; */
   /* background-repeat: no-repeat; */
@@ -11,11 +11,13 @@ img {
   /* height: 100vh; */
   margin-top: -24px; 
   margin-bottom: -48px;
+  background-color: #fafaf8; 
+  color: black;
 }
 
 .landing-inner {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /* .dark-overlay {
@@ -53,6 +55,8 @@ footer {
   background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); 
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   position: relative;
+  bottom: 0;
+  width: 100%
 }
 
 .btn {
@@ -62,11 +66,6 @@ footer {
 
 .instaphone {
   width: 350px;
-}
-
-.landing {
-  background-color: #fafaf8; 
-  color: black;
 }
 
 nav {
