@@ -2,19 +2,20 @@ img {
   width: 100%;
 }
 
-/* .landing {
-  position: relative;
-  background: url('./img/instagram.png') no-repeat;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left; 
-  height: 100vh;
-  margin-top: -24px;
+.landing {
+  /* position: relative; */
+  /* background: url('./img/instagram.png') no-repeat; */
+  /* background-size: contain; */
+  /* background-repeat: no-repeat; */
+  /* background-position: left;  */
+  /* height: 100vh; */
+  margin-top: -24px; 
   margin-bottom: -48px;
-} */
+}
 
 .landing-inner {
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 /* .dark-overlay {
@@ -51,6 +52,7 @@ footer {
   background: #833ab4; 
   background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); 
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  position: relative;
 }
 
 .btn {
