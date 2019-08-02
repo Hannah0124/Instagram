@@ -121,6 +121,10 @@ router.post('/',
     if (req.body.name) profileFields.name = req.body.name;
     if (req.body.website) profileFields.website = req.body.website;
     if (req.body.bio) profileFields.bio = req.body.bio;
+    if (req.body.followers) profileFields.followers = req.body.followers;
+    if (req.body.status) profileFields.status = req.body.status;
+    if (req.body.company) profileFields.company = req.body.company;
+    if (req.body.location) profileFields.location = req.body.location;
 
     // Private info
     profileFields.privateInfo = {};

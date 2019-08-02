@@ -89,3 +89,15 @@ nav {
 .instagram-logo {
   font-family: 'Norican', cursive;
 }
+
+.profile-group {
+  width: 100%;
+}
+
+.profile-title {
+  padding: 10px 17px 17px 17px;
+  font-weight: bold;
+  font-size: 17px;
+  float: left;
+}
+

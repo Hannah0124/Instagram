@@ -25,6 +25,20 @@ const ProfileSchema = new Schema({
  bio: {
    type: String
  },
+ followers: {
+   type: [String],
+   required: true
+ },
+ status: {
+  type: String,
+  required: true
+},
+ company: {
+   type: String
+ },
+ location: {
+   type: String
+ },
  privateInfo: {
    email: {
      type: String
@@ -36,6 +50,20 @@ const ProfileSchema = new Schema({
      stype: String
    }
  },
+ social: {
+  youtube: {
+    type: String
+  },
+  twitter: {
+    type: String
+  },
+  facebook: {
+    type: String
+  },
+  linkedin: {
+    type: String
+  },
+},
  date: { 
    type: Date,
    default: Date.now

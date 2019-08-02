@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import instagram from '../../img/instagram.gif';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 
-export default class Landing extends Component {
+class Landing extends Component {
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
+
   render() {
     return (
       <div className="landing">
@@ -15,7 +23,10 @@ export default class Landing extends Component {
             <div className="col-md-6 text-center">
               <h1 className="instagram-logo display-3 mb-4 black-font">Instagram </h1>
               <h2 className="instagram-logo display-3 mb-4 gray-font">for developers</h2>
-              <p className="lead black-font"> Sign up to share photos and videos with your friends in the developer community.</p>
+              <p className="lead black-font"> 
+                {' '}
+                Sign up to share photos and videos with your friends in the developer community.
+              </p>
               <hr />
               <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
               <Link to="/login" className="btn btn-lg btn-light">Login</Link>
@@ -27,3 +38,13 @@ export default class Landing extends Component {
     )
   }
 }
+
+Landing.propTypes = {
+  auth: PropTypes.object.isRequired
+ };
+ 
+ const mapStateToProps = state => ({
+  auth: state.auth
+ });
+ 
+ export default connect(mapStateToProps)(Landing);

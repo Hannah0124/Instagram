@@ -48,6 +48,12 @@ class Register extends Component {
     this.props.registerUser(newUser, this.props.history);
   }
 
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push('/dashboard');
+    }
+  }
+
   // Get new data (props) from Redux
   componentWillReceiveProps(nextProps) {
     if(nextProps.errors) {
