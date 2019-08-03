@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const ProfileSchema = new Schema({
 // Reference my users information. (This Profile is attached to the users)
  user: {
-   // ObjectID means I’m reference another object.
+   // ObjectID means I’m referring to another object.
    type: Schema.Types.ObjectId,
    ref: 'users'
  },

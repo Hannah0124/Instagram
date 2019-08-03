@@ -31,15 +31,14 @@ class PostItem extends Component {
    const { post, auth, showActions } = this.props;
 
    return (
-     <div className="card card-body mb-3">
+     <div className="card card-body col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-3 feeds-align">
        
        <div className="row">
-          
          {/* <div className="col-md-2"> */}
            <Link className="avatar-group" to="/profile">  
            {/* edited    */}
              <img
-               className="rounded-circle d-md-block post-avatar"
+               className="rounded-circle post-avatar"
                src={post.avatar}
                alt=""
              />                      
@@ -52,22 +51,24 @@ class PostItem extends Component {
            </div> 
            
            {/* edited */}
-         <div className="post-group">         
-           <img className="post-image col-lg-6 col-md-4 col-sm-3" src={post.photo} />
-           <p className="lead caption col-lg-6 col-md-8 col-sm-9">{post.text}</p>
+         <div className="post-group">   
+           <img className="post-image" src={post.photo} />
+           <p className="lead caption d-md-none">{post.text}</p>
          </div>
-         {/* edited */}
-         <div className="tag-people col-lg-12 col-md-12 col-sm-12">
+         {/* edited */}         <div className="tag-people">
            <ul className="list-group">
              {post.tags.map((tag, index) => (
               <li key={index} >
-                 <i className="fas fa-user" aria-hidden="true"/>
-                {/* <i className="fa fa-check pr-1" /> */} 
-                {'  '} {tag}
+                 <i className="fas fa-user" aria-hidden="true" data-toggle="collapse" data-target="#tag-btn-collpase"/>
+                {/* <i className="fa fa-check pr-1" />  */}
+                <span id="tag-btn-collpase" class="collapse">{tag}</span> 
               </li>
               ))}
            </ul>
          </div>
+
+         {/* aria-hidden="true" */}
+
 
          <div className="post-buttons">
            {showActions ? (
@@ -75,7 +76,7 @@ class PostItem extends Component {
                <button
                  onClick={this.onLikeClick.bind(this, post._id)}
                  type="button"
-                 className="btn btn-light mr-1"
+                 className="btn btn-light mr-1 lightgray-btn"
                >
                  {/* <i
                    className={classnames('fas fa-thumbs-up', {
@@ -94,12 +95,12 @@ class PostItem extends Component {
                <button
                  onClick={this.onUnlikeClick.bind(this, post._id)}
                  type="button"
-                 className="btn btn-light mr-1"
+                 className="btn btn-light mr-1 lightgray-btn"
                >           
                  {/* <i className="text-secondary fas fa-thumbs-down" /> */}
                  <i className="far fa-heart" />
                </button>
-               <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
+               <Link to={`/post/${post._id}`} className="btn btn-info lightgray-btn mr-1">
                  Comments
                </Link>
                {post.user === auth.user.id ? (
@@ -114,6 +115,7 @@ class PostItem extends Component {
              </span>
            ) : null}
          </div>
+
        </div>
      </div>
    );

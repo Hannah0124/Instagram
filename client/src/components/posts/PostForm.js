@@ -64,13 +64,20 @@ onSelectFile(event) { // called each time file input changes
    return (
      <div className="post-form mb-3">
        <div className="card card-info">
-         <div className="card-header bg-info text-white">Say Something...</div>
-         <div className="card-body">
+         {/* <div className="card-header bg-info text-white ">New Post</div> */}
+
+         {/* <button data-toggle="collapse" data-target="#demo">Collapsible</button>
+
+<div id="demo" class="collapse">
+Lorem ipsum dolor text....
+</div> */}
+         <div className="card-header gray-btn" data-toggle="collapse" data-target="#demo"><i class="fas fa-plus-square"> New Post</i></div>
+         <div className="card-body" id="demo" class="collapse">
            <form onSubmit={this.onSubmit}>
              <div className="form-group">
               {/* edited */}
               <div className="col-lg-5"></div>
-              <div className="col-lg-7">          
+              <div className="col-lg-7 input-margin">          
                 <TextFieldGroup
                   src={this.state.photo}
                   type="url"
