@@ -8,6 +8,9 @@ const ProfileSchema = new Schema({
    type: Schema.Types.ObjectId,
    ref: 'users'
  },
+ avatar: {
+   type: String
+ },
  handle: {  // userName
   type: String,  
   required: true,

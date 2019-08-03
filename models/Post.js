@@ -15,14 +15,17 @@ const PostSchema = new Schema({
  text: {
    type: String // text is not required
  },
- tag: [  // added
-   {
-    user: {
-      type: Schema.Types.ObjectId,
-      ref: 'users'
-    }
-   }
- ],
+//  tag: [  // added
+//    {
+//     user: {
+//       type: Schema.Types.ObjectId,
+//       ref: 'users'
+//     }
+//    }
+//  ],
+ tags: {  // edited
+     type: [String]
+ },
  location: {  // added
    type: String
  },

@@ -101,3 +101,81 @@ nav {
   float: left;
 }
 
+.post-image {
+  width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.caption {
+  float: right;
+  position: relative;
+  /* height: 100%; */
+  /* margin: 0; */
+}
+
+.post-avatar {
+  margin-bottom: 5px;
+  position: relative;
+  /* margin-left: 13px;
+  margin-right: 13px; */
+}
+
+.avatar-group {
+  width: 60px;
+  margin-left: 14px;
+  margin-right: 13px;
+  margin-bottom: 10px;
+}
+
+.lightgray-btn {
+  background-color: #FDFAFA;
+  color: gray;
+  border: 0;
+}
+
+.red-btn {
+  background-color: darkred;
+  border: 0;
+}
+
+.post-btn {
+  margin: 0 15px;
+  border: 0;
+}
+
+.red-icon {
+  color: #E42217;
+}
+
+.post-buttons {
+  margin-left: 14px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.tag-people {
+  margin-bottom: 5px;
+}
+
+profile-list {
+  margin-left: 0;
+  padding: 0;
+}
+
+.account-avatar {
+  width: 120px;
+  margin-top: 10px;
+}
+
+.edit-profile-btn {
+  float: right;
+}
+
+.greeting {
+  float: left;
+  margin-bottom: 20px;
+}

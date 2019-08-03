@@ -50,11 +50,16 @@ router.post('/',
       return res.status(400).json(errors);
     }
 
+    // // Tags - Spilt into array
+    // if (typeof req.body.tags !== 'undefined') {
+    //   profileFields.tags = req.body.tags.split(',');
+    // }
+
     // Create a post 
     const newPost = new Post({
       photo: req.body.photo,
       text: req.body.text,
-      tag: req.body.tag,
+      tags: req.body.tags,
       location: req.body.location,
       name: req.body.name,
       avatar: req.body.avatar,

@@ -137,7 +137,7 @@ export const getProfiles = () => dispatch => {
  
  // Delete account & profile
  export const deleteAccount = () => dispatch => {
-  if (window.confirm('Are you sure? This can NOT be undone!')) {
+  if (window.confirm('Are you sure? Your account will be permanently deleted. This cannot be undone!')) {
     axios
       .delete('/api/profile')
       .then(res =>

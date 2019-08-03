@@ -53,7 +53,7 @@ class CreateProfile extends Component {
      location: this.state.location,
      email: this.state.email,
      phone: this.state.phone,
-     gender: this.state.gender,
+     gender: this.state.gender, 
      twitter: this.state.twitter,
      facebook: this.state.facebook,
      linkedin: this.state.linkedin,

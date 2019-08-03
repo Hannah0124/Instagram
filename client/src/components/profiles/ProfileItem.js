@@ -16,6 +16,16 @@ class ProfileItem extends Component {
           <div className="col-log-6 col-md-4 col-8">
             <h3>{profile.user.name}</h3>
             <p>
+              {isEmpty(profile.bio) ? null : (
+                <span>{profile.bio}</span>
+              )}
+            </p>
+            <p>
+              {isEmpty(profile.status) ? null : (
+                <span>{profile.status}</span>
+              )}
+            </p>
+            <p>
               {isEmpty(profile.website) ? null : (
                 <span>{profile.website}</span>
               )}
