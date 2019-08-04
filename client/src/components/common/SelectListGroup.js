@@ -10,9 +10,7 @@ const SelectListGroup = ({
   info, 
   onChange, 
   options }) => {
-
     const selectOptions = options.map(option => (
-
       <option key={option.label} value={option.value}>
         {option.label}
       </option>
@@ -59,6 +57,7 @@ const SelectListGroup = ({
 };
 
 SelectListGroup.propTypes = {
+  title: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   info: PropTypes.string,
