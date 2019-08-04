@@ -49,7 +49,8 @@ const TextFieldGroup = ({
               name={name}
               value={value}
               onChange={onChange}
-              disabled={disabled}         
+              disabled={disabled} 
+              alt=""        
             />
             <input 
               type={type}

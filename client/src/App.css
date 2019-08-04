@@ -231,5 +231,6 @@ profile-list {
 }
 
 .comment-avatar {
-  width: 50px;
+  width: 80%;
+  max-width: 100px;
 }

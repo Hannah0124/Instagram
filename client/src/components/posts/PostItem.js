@@ -52,7 +52,7 @@ class PostItem extends Component {
            
            {/* edited */}
          <div className="post-group">   
-           <img className="post-image" src={post.photo} />
+           <img className="post-image" src={post.photo} alt=""/>
            <p className="lead caption">{post.text}</p>
          </div>
          {/* edited */}         
