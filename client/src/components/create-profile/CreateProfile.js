@@ -227,7 +227,7 @@ class CreateProfile extends Component {
                <form>
                  <h5 className="gray-font">Private info</h5>
                  <TextFieldGroup
-                   title="email"
+                   title="Email"
                    placeholder="email"
                    name="email"
                    value={this.state.email}

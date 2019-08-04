@@ -47,7 +47,7 @@ class CreateProfile extends Component {
    if (nextProps.profile.profile) {
      const profile = nextProps.profile.profile;
 
-     // If profile field doesnt exist, make empty string
+     // If profile field doesn't exist, make empty string
      profile.name = !isEmpty(profile.name) ? profile.name : '';
      profile.website = !isEmpty(profile.website) ? profile.website : '';
      profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
@@ -277,7 +277,7 @@ class CreateProfile extends Component {
                <form>
                  <h5 className="gray-font">Private info</h5>
                  <TextFieldGroup
-                   title="email"
+                   title="Email"
                    placeholder="email"
                    name="email"
                    value={this.state.email}

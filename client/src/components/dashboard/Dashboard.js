@@ -46,7 +46,7 @@ class Dashboard extends Component {
               <div className="card-body">
                 <p>{profile.status ? profile.status  : ''}
     {profile.company ? ` at ${profile.company}` : ''}</p>
-                <p>{profile.location ? `Live in ${profile.location}` : ''}</p>
+                <p>{profile.location ? `Lives in ${profile.location}` : ''}</p>
               </div>
             </div>
           </div>
