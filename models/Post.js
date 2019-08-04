@@ -15,15 +15,7 @@ const PostSchema = new Schema({
  text: {
    type: String // text is not required
  },
-//  tag: [  // added
-//    {
-//     user: {
-//       type: Schema.Types.ObjectId,
-//       ref: 'users'
-//     }
-//    }
-//  ],
- tags: {  // edited
+ tags: {  // added
      type: [String]
  },
  location: {  // added
@@ -34,20 +26,6 @@ const PostSchema = new Schema({
  },
  avatar: {
    type: String
- },
- social: {  // added
-   facebook: {
-     type: Boolean,
-     default: false
-   },
-   twitter: {
-     type: Boolean,
-     default: false
-   },
-   tumblr: {
-     type: Boolean,
-     default: false
-   }
  },
  likes: [
    {

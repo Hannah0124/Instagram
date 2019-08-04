@@ -53,9 +53,10 @@ class PostItem extends Component {
            {/* edited */}
          <div className="post-group">   
            <img className="post-image" src={post.photo} />
-           <p className="lead caption d-md-none">{post.text}</p>
+           <p className="lead caption">{post.text}</p>
          </div>
-         {/* edited */}         <div className="tag-people">
+         {/* edited */}         
+         <div className="tag-people">
            <ul className="list-group">
              {post.tags.map((tag, index) => (
               <li key={index} >
@@ -102,6 +103,7 @@ class PostItem extends Component {
                </button>
                <Link to={`/post/${post._id}`} className="btn btn-info lightgray-btn mr-1">
                  Comments
+                 <span className="badge">{post.comments.length}</span>
                </Link>
                {post.user === auth.user.id ? (
                  <button

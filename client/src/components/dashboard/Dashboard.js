@@ -29,35 +29,36 @@ class Dashboard extends Component {
        dashboardContent = (
          <div>
           {/* Edited */}
-           <div>
-             <div className=" col-lg-6 col-md-6 col-sm-6" >
+          <div>
+            <div>
+             <img
+                 className="rounded-circle account-avatar"
+                 src={user.avatar}
+                 alt=""
+                 />
                <div className="lead text-muted greeting">
                  {/* Edited */}
-                 Welcome <Link to={`/profile/${profile.handle}`}>{profile.name}</Link>            
-               </div> 
-             </div>
-             <div className="col-lg-6 col-md-6 col-sm-6">
-               <ProfileActions/>
-               <div className="profile-list">
-                 <section>{profile.status ? profile.status  : ''}{profile.company ? ` at ${profile.company}` : ''}</ section>
-                 <span>{profile.location ? `Live in ${profile.location}` : ''}</span>   
+                 Welcome <Link to={`/profile/${profile.handle}`}>{profile.name}</Link>
                </div>
-             </div>         
-           </div>
+            </div>
 
-           {/* Edited
-           <div className="profile-list">
-             <div>{profile.status ? profile.status  : ''}{profile.company ? ` at ${profile.company}` : ''}</div>
-             <div>{profile.location ? `Live in ${profile.location}` : ''}</div>   
-           </div> */}
+            <div className="card profile-list">
+              <div className="card-body">
+                <p>{profile.status ? profile.status  : ''}
+    {profile.company ? ` at ${profile.company}` : ''}</p>
+                <p>{profile.location ? `Live in ${profile.location}` : ''}</p>
+              </div>
+            </div>
+          </div>
 
-           <div style={{ marginBottom: '60px' }} />
-           <button
+          <ProfileActions /> 
+          <div style={{ marginBottom: '60px' }} />
+          <button
              onClick={this.onDeleteClick.bind(this)}
              className="btn btn-danger red-btn"
-           >
-             Delete My Account
-           </button>
+          >
+            Delete My Account
+          </button>
          </div>
        );
      } else {
@@ -65,6 +66,11 @@ class Dashboard extends Component {
        dashboardContent = (
          <div>
            {/* edited */}
+           <img
+              className="rounded-circle account-avatar"
+              src={user.avatar}
+              alt=""
+              />
            <div className="lead text-muted">Welcome {user.fullName}</div>
            <p>You have not yet setup a profile</p>
            <Link to="/create-profile" className="btn btn-lg btn-info">
@@ -79,13 +85,13 @@ class Dashboard extends Component {
      <div className="dashboard">
        <div className="container">
          <div className="row">
-           <div className="col-md-12">
+           <div className="">
              <h2 className="display-4">My account</h2>
-               <img
-                 className="rounded-circle account-avatar"
-                 src={user.avatar}
-                 alt=""
-               />
+             {/* <img
+              className="rounded-circle account-avatar"
+              src={user.avatar}
+              alt=""
+              /> */}
              {dashboardContent}
            </div>
          </div>

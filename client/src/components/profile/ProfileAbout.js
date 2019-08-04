@@ -24,12 +24,6 @@ class ProfileAbout extends Component {
            {/* Edited below */}
            <p>{profile.website}</p>
            <hr />
-           <h3 className="text-center text-info">Follwed by</h3>
-           <div className="row">
-             <div className="d-flex flex-wrap justify-content-center align-items-center">
-               {profile.followers}
-             </div>
-           </div>
          </div>
        </div>
      </div>

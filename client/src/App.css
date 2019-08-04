@@ -86,13 +86,18 @@ nav {
   color: gray! important;
 }
 
+.date-font {
+  font-size: 12px;
+  float: right;
+}
+
 .instagram-logo {
   font-family: 'Norican', cursive;
 }
 
-.profile-group {
-  /* width: 100%; */
-}
+/* .profile-group {
+  width: 100%;
+} */
 
 .profile-title {
   padding: 10px 17px 17px 17px;
@@ -102,18 +107,19 @@ nav {
 }
 
 .post-image {
-  height: 100%;
-  /* width: 50%;
-  height: auto; */
-  /* margin-bottom: 10px; */
-  /* position: relative; */
+  margin-bottom: 10px;
+  /* position: absolute; */
+  /* min-height: 200px;
+  max-height: 200px; */
 }
 
 .caption {
-  float: right;
   position: relative;
-  /* height: 100%; */
-  /* margin: 0; */
+  margin: 5px;
+  /* margin-bottom: 5px; */
+  font-size: 14px;
+  background-color: white;
+  opacity: 0.5;
 }
 
 .post-avatar {
@@ -145,7 +151,8 @@ nav {
 .post-btn {
   margin: 5px;
   border: 0;
-  position: relativie;
+  /* position: absolute; */
+  float: left;
 }
 
 .red-icon {
@@ -157,8 +164,8 @@ nav {
   margin-left: 5px;
   margin-bottom: 0;
   float: left;
-  bottom: 10px;
-  position: absolute;
+  /* bottom: 10px; */
+  position: relative;
 }
 
 li {
@@ -166,18 +173,23 @@ li {
 }
 
 .tag-people {
-  margin-left: 5px;
-  margin-bottom: 5px;
+  padding: 5px;
+  margin: 5px;
   float: left;
-  bottom: 30px;
-  position: relative;
+  top: 100px;
+  left: 15px;
+  position: absolute;
+  background-color: white;
+  opacity: 0.5;
+  font-weight: bold;
+  /* position: absolute; */
 }
 
-/* profile-list {
-  margin-left: 0;
-  padding: 0;
-  float: right;
-} */
+profile-list {
+  margin: 30px;
+  /* right: 0;
+  top: 0; */
+}
 
 .account-avatar {
   width: 120px;
@@ -185,7 +197,9 @@ li {
 }
 
 .edit-profile-btn {
-  float: right;
+  float: left;
+  width: 160px;
+  margin-top: 10px;
 }
 
 .greeting {
@@ -200,10 +214,17 @@ li {
 
 .feeds-align {
   float: right;
+  height: auto;
+  min-height: 510px;
+  max-height: 650px; 
 }
 
 .input-margin {
   margin: 10px;
   padding: 0px;
   width: 80%;
+}
+
+.comment-avatar {
+  width: 50px;
 }
