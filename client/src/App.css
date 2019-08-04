@@ -86,6 +86,10 @@ nav {
   color: gray! important;
 }
 
+.blue-font {
+  color: #3897f0;
+}
+
 .date-font {
   font-size: 12px;
   float: right;
@@ -233,4 +237,8 @@ profile-list {
 .comment-avatar {
   width: 80%;
   max-width: 100px;
+}
+
+.gray-icon {
+  color: darkgray;
 }
