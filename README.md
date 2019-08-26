@@ -1,5 +1,5 @@
 # Instagram-for-developers web app
-A photo-sharing social networking for developers
+A photo-sharing social network for developers
 
 ## Demo video 
 To see a demo video, click the screenshot below.
@@ -14,8 +14,6 @@ To see a demo video, click the screenshot below.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### How to install
-
-What things you need to install the software and how to install them
 
 ```
 npm install
