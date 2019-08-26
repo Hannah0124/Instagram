@@ -1,3 +1,4 @@
+    
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -29,31 +30,25 @@ class Dashboard extends Component {
        dashboardContent = (
          <div>
           {/* Edited */}
-          <div>
-            <div>
-             <img
-                 className="rounded-circle account-avatar"
-                 src={user.avatar}
-                 alt=""
-                 />
-               <div className="lead text-muted greeting">
-                 {/* Edited */}
-                 Welcome <Link to={`/profile/${profile.handle}`}>{profile.name}</Link>
-               </div>
+          <img
+              className="rounded-circle account-avatar"
+              src={user.avatar}
+              alt=""
+              />
+           <div>    
+               <div className="welcome-text" >
+               <em>Welcome <Link to={`/profile/${profile.handle}`}>{profile.name}</Link>!</em> <span />    
+               </div> 
+            <div className="profile-list">
+              <div>{profile.status ? profile.status  : ''}{profile.company ? ` at ${profile.company}` : ''}</div> 
+              <div>  {profile.location ? `Live in ${profile.location}` : ''}  </div>  
+              <div><ProfileActions/></div>
             </div>
+             
+             </div>
+           <div style={{ marginBottom: '60px' }} />
 
-            <div className="card profile-list">
-              <div className="card-body">
-                <p>{profile.status ? profile.status  : ''}
-    {profile.company ? ` at ${profile.company}` : ''}</p>
-                <p>{profile.location ? `Lives in ${profile.location}` : ''}</p>
-              </div>
-            </div>
-          </div>
-
-          <ProfileActions /> 
-          <div style={{ marginBottom: '60px' }} />
-          <button
+           <button
              onClick={this.onDeleteClick.bind(this)}
              className="btn btn-danger red-btn delete-account-btn"
           >
@@ -85,14 +80,18 @@ class Dashboard extends Component {
      <div className="dashboard">
        <div className="container">
          <div className="row">
-           <div className="">
-             <h2 className="display-4">My account</h2>
-             {/* <img
-              className="rounded-circle account-avatar"
-              src={user.avatar}
-              alt=""
-              /> */}
+           <div className="col-md-12">
+             <div className="card card-body text-center  mb-3">
+             <h3 className="display-4">My account</h3>
+             <h2>{user.fullName}</h2>
+               {/* <img
+                 style={{position: "relative" }}
+                 className="rounded-circle account-avatar"
+                 src={user.avatar}
+                 alt=""
+               /> */}
              {dashboardContent}
+           </div>
            </div>
          </div>
        </div>
